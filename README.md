@@ -21,7 +21,7 @@ excel files (it should contain nothing else than excel files) and wrap
 it in the dir function (e.g. path=dir("C:/Users/mystuff/")).
 
 See the example data
-[here](%22https://raw.githubusercontent.com/Russel88/COEF/master/ExampleData/test.xlsx%22),
+[here](https://raw.githubusercontent.com/Russel88/COEF/master/ExampleData/test.xlsx),
 which can be loaded like this:
 
     data <- read_elisa(path = "test.xlsx", descriptions = 2)
