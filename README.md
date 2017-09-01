@@ -20,9 +20,9 @@ loaded at the same time write the path for the folder containing the
 excel files (it should contain nothing else than excel files) and wrap
 it in the dir function (e.g. path=dir("C:/Users/mystuff/")).
 
-See the example data in
-<https://github.com/Russel88/COEF/ExampleData/test.xlsx>, which can be
-loaded like this:
+See the example data
+[here](%22https://raw.githubusercontent.com/Russel88/COEF/master/ExampleData/test.xlsx%22),
+which can be loaded like this:
 
     data <- read_elisa(path = "test.xlsx", descriptions = 2)
 
