@@ -26,6 +26,13 @@ which can be loaded like this:
 
     data <- read_elisa(path = "test.xlsx", descriptions = 2)
 
+The following error might arise:
+
+    Error in read_fun(path = path, sheet = sheet, limits = limits, shim = shim,  : 
+      Evaluation error: zip file 'X.xlsx' cannot be opened.'
+
+This is because 'X.xlsx' is in the path argument but does not exist.
+
 #### fancy\_scientific
 
 Numeric to fancy scientific notation. By [Brian
