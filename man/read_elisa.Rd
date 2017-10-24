@@ -7,7 +7,7 @@
 read_elisa(paths, descriptions = 0)
 }
 \arguments{
-\item{paths}{The path(s) for the excel file(s)}
+\item{paths}{The path(s) for the excel file(s) or for a folder containing only excel files}
 
 \item{descriptions}{Number of descriptive sheets. Default 0, i.e. only OD measurements are loaded}
 }

@@ -14,17 +14,23 @@ descriptions.
 It will load excel files, and can automatically locate the 96 well plate
 as long as there is only data from 1 plate in 1 excel file.
 
-The input is the path for where the excel file is located (e.g.
-path="C:/Users/mystuff/file.xlsx"), or if several excel files should be
+The function will also load descriptions of what is in each well of the
+96 well plate. These descriptions should be in the same excel file, but
+in seperate sheets. See the [example
+data](https://raw.githubusercontent.com/Russel88/COEF/master/ExampleData/test.xlsx)
+for how to set it up.
+
+The input is the path for where the excel file is located, e.g.
+paths="C:/Users/mystuff/file.xlsx"), or if several excel files should be
 loaded at the same time write the path for the folder containing the
-excel files (it should contain nothing else than excel files) and wrap
-it in the dir function (e.g. path=dir("C:/Users/mystuff/")).
+excel files (it should contain nothing else than excel files): e.g.
+paths="C:/Users/mystuff/".
 
 See the example data
 [here](https://raw.githubusercontent.com/Russel88/COEF/master/ExampleData/test.xlsx),
 which can be loaded like this:
 
-    data <- read_elisa(path = "test.xlsx", descriptions = 2)
+    data <- read_elisa(paths = "test.xlsx", descriptions = 2)
 
 The following error might arise:
 

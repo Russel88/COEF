@@ -4,7 +4,7 @@
 #' The excel file(s) should contain a sheet with OD measurements, and can contain additional sheets with descriptions of what is in the wells, e.g. WT, Contol and so on.
 #' The measurements and desciptive sheets should be set up as a 96 Well plate with including A to H and 1 to 12.
 #' 
-#' @param paths The path(s) for the excel file(s)
+#' @param paths The path(s) for the excel file(s) or for a folder containing only excel files
 #' @param descriptions Number of descriptive sheets. Default 0, i.e. only OD measurements are loaded
 #' @return A dataframe with all data. Descriptions are called V1, V2, and so on, in the same order as in the excel sheets.
 #' @import readxl
@@ -12,12 +12,17 @@
 
 read_elisa <- function(paths,descriptions = 0){
 
-  library(readxl)
+  if(any(!sub('.*\\.', '', paths) %in% c("xlsx","xls"))){
+    if(length(paths)>1) stop("One or more files in paths are not excel (xlsx/xls) files")
+    paths <- paste0(paths,dir(paths))
+  }  
+  
+  if(any(!sub('.*\\.', '', paths) %in% c("xlsx","xls"))) stop("One or more files in paths are not excel (xlsx/xls) files")
 
   read_elisa_sub <- function(path, description){
   
   # Load data
-  mat <- as.data.frame(read_excel(path, col_names = FALSE))
+  mat <- as.data.frame(readxl::read_excel(path, col_names = FALSE))
 
   find.rows <- suppressWarnings(apply(mat,2,function(x) x %in% LETTERS[1:8]))
   sub.rows <- suppressWarnings(as.matrix(find.rows[,colSums(find.rows) == 8]))
@@ -33,7 +38,7 @@ read_elisa <- function(paths,descriptions = 0){
   if(descriptions != 0){
     des <- list()
     for(i in 1:description){
-      des[[i]] <- as.data.frame(read_excel(path, sheet = i+1, col_names = FALSE))
+      des[[i]] <- as.data.frame(readxl::read_excel(path, sheet = i+1, col_names = FALSE))
       
       find.rows.d <- suppressWarnings(apply(des[[i]],2,function(x) x %in% LETTERS[1:8]))
       sub.rows.d <- suppressWarnings(as.matrix(find.rows.d[,colSums(find.rows.d) == 8]))
@@ -60,12 +65,12 @@ read_elisa <- function(paths,descriptions = 0){
   return(df)
 }
 
-# Load sheets
-dfs <- lapply(paths,function(x) read_elisa_sub(x, descriptions))
+  # Load sheets
+  dfs <- lapply(paths,function(x) read_elisa_sub(x, descriptions))
 
-dfx <- as.data.frame(do.call(rbind, dfs))
-rownames(dfx) <- NULL
+  dfx <- as.data.frame(do.call(rbind, dfs))
+  rownames(dfx) <- NULL
 
-return(dfx)
+  return(dfx)
 }
 
