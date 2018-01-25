@@ -43,3 +43,30 @@ This is because 'X.xlsx' is in the path argument but does not exist.
 
 Numeric to fancy scientific notation. By [Brian
 Diggs](https://groups.google.com/forum/#!topic/ggplot2/a_xhMoQyxZ4)
+
+How to use it:
+
+    library(ggplot2)
+    library(COEF)
+    data(mtcars)
+    ggplot(mtcars, (aes(cyl, wt))) +
+      geom_point()+
+      scale_y_continuous(labels = fancy_scientific)
+
+![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)
+
+#### tls
+
+Total Least Squares for ggplot stat\_smooth and geom\_smooth
+
+How to use it:
+
+    library(ggplot2)
+    library(COEF)
+    data(mtcars)
+    ggplot(mtcars, (aes(mpg, disp))) +
+      geom_point() +
+      geom_smooth(method = "tls", colour = "red") +
+      geom_smooth(method = "lm", colour = "blue", se = FALSE)
+
+![](README_files/figure-markdown_strict/unnamed-chunk-4-1.png)
