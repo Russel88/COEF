@@ -57,7 +57,8 @@ How to use it:
 
 #### tls
 
-Total Least Squares for ggplot stat\_smooth and geom\_smooth
+Total Least Squares for ggplot stat\_smooth and geom\_smooth with
+bootstrapped confidence intervals
 
 How to use it:
 
@@ -67,6 +68,6 @@ How to use it:
     ggplot(mtcars, (aes(mpg, disp))) +
       geom_point() +
       geom_smooth(method = "tls", colour = "red") +
-      geom_smooth(method = "lm", colour = "blue", se = FALSE)
+      geom_smooth(method = "lm", colour = "blue")
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-4-1.png)

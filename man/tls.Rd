@@ -2,10 +2,12 @@
 % Please edit documentation in R/tls.R
 \name{tls}
 \alias{tls}
-\title{Total Least Squares for ggplot stat_smooth and geom_smooth}
+\title{Total Least Squares for ggplot stat_smooth and geom_smooth
+With bootstrapped confidence intervals}
 \usage{
 tls(formula, data, ...)
 }
 \description{
 Total Least Squares for ggplot stat_smooth and geom_smooth
+With bootstrapped confidence intervals
 }
