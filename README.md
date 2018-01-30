@@ -1,12 +1,14 @@
 COEF: Collection Of Esoteric Functions
 ======================================
 
-### Installation
+Installation
+------------
 
     library(devtools)
     install_github("Russel88/COEF")
 
-#### read\_elisa
+read\_elisa
+-----------
 
 Seamless loading of data from ELISA plate reader, including
 descriptions.
@@ -39,7 +41,8 @@ The following error might arise:
 
 This is because 'X.xlsx' is in the path argument but does not exist.
 
-#### fancy\_scientific
+fancy\_scientific
+-----------------
 
 Numeric to fancy scientific notation. By [Brian
 Diggs](https://groups.google.com/forum/#!topic/ggplot2/a_xhMoQyxZ4)
@@ -55,7 +58,8 @@ How to use it:
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-3-1.png)
 
-#### tls
+tls
+---
 
 Total Least Squares for ggplot stat\_smooth and geom\_smooth with
 bootstrapped confidence intervals
