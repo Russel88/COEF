@@ -64,14 +64,29 @@ tls
 Total Least Squares for ggplot stat\_smooth and geom\_smooth with
 bootstrapped confidence intervals
 
+Remember that x and y has to be on the same scale!
+
 How to use it:
 
     library(ggplot2)
     library(COEF)
     data(mtcars)
-    ggplot(mtcars, (aes(mpg, disp))) +
+    ggplot(mtcars, (aes(scale(mpg), scale(disp)))) +
       geom_point() +
       geom_smooth(method = "tls", colour = "red") +
       geom_smooth(method = "lm", colour = "blue")
 
 ![](README_files/figure-markdown_strict/unnamed-chunk-4-1.png)
+
+p2bayes
+-------
+
+Estimate the maximum possible Bayes factor from a p-value
+
+Bayes factor is here the ratio of the likelihood probability of the
+alternative versus the null hypothesis.
+
+    library(COEF)
+    p2bayes(0.05)
+
+    ## [1] 2.456023
