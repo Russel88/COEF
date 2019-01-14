@@ -87,6 +87,7 @@ Bayes factor is here the ratio of the likelihood probability of the
 alternative versus the null hypothesis.
 
     library(COEF)
+
     p2bayes(0.05)
 
     ## [1] 2.456023
