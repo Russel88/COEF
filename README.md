@@ -1,3 +1,6 @@
+[![Travis Build
+Status](https://travis-ci.org/Russel88/COEF.svg?branch=master)](https://travis-ci.org/Russel88/COEF)
+
 COEF: Collection Of Esoteric Functions
 ======================================
 
