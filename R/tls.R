@@ -1,6 +1,9 @@
 #' Total Least Squares for ggplot stat_smooth and geom_smooth
 #' With bootstrapped confidence intervals
 #' 
+#' @param formula formula for the tls
+#' @param data Input data.frame
+#' @param ... Unused argument
 #' @import boot
 #' @export
 tls <- function(formula,data,...){
@@ -21,6 +24,12 @@ tls <- function(formula,data,...){
   dfx  
 }
 
+#' Internal prediction functions for tls smooth
+#' 
+#' @param model Input model
+#' @param xseq x-values used for prediction
+#' @param se Predict error or not
+#' @param level Confidence level
 #' @export
 predictdf.TLS <- function(model, xseq, se, level) {
   pred <- as.numeric(model[[1]] %*% t(cbind(1, xseq)))

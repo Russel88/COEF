@@ -7,6 +7,13 @@ With bootstrapped confidence intervals}
 \usage{
 tls(formula, data, ...)
 }
+\arguments{
+\item{formula}{formula for the tls}
+
+\item{data}{Input data.frame}
+
+\item{...}{Unused argument}
+}
 \description{
 Total Least Squares for ggplot stat_smooth and geom_smooth
 With bootstrapped confidence intervals

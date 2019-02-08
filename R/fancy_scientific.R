@@ -4,7 +4,7 @@
 #'
 #' @param l Numberic label input
 #' @return Value in scientific notation
-
+#' @import stats
 #' @export
 fancy_scientific <- function(l) {
   # turn in to character string in scientific notation
