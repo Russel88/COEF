@@ -3,6 +3,7 @@
 export(fancy_scientific)
 export(p2bayes)
 export(predictdf.TLS)
+export(prune_by_group)
 export(read_elisa)
 export(tls)
 import(boot)

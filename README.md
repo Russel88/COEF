@@ -94,3 +94,14 @@ alternative versus the null hypothesis.
     p2bayes(0.05)
 
     ## [1] 2.456023
+
+
+prune_by_group
+--------------
+
+Prune taxa from a phyloseq object such that taxa are present in at least 
+proportion P in at least one "Group" of samples.
+
+    library(COEF)
+
+    prune_by_group(physeq, "Group", P = 0.5)
