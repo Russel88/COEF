@@ -10,6 +10,15 @@ Installation
     library(devtools)
     install_github("Russel88/COEF")
 
+rcurve
+------
+
+Rarefaction curve (theoretical and fast) from a phyloseq object. Output ready for plotting in ggplot2
+
+    library(COEF)
+
+    rcurve(physeq, subsample = c(1e3 * 1:50))
+
 read\_elisa
 -----------
 
