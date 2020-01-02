@@ -11,14 +11,14 @@ Installation
     install_github("Russel88/COEF")
 
 
-adonis_partialOmegaSq
+adonis_OmegaSq
 ------
 
-Calculate partial Omega-squared (effect-size calculation) for PERMANOVA
+Calculate (partial) Omega-squared (effect-size calculation) for PERMANOVA
 
     library(COEF)
 
-    adonis_partialOmegaSq(adonisOutput)
+    adonis_OmegaSq(adonisOutput)
 
 
 rcurve
